@@ -1,0 +1,53 @@
+﻿@model Cricket.Models.tblPlayer1
+
+@{
+    ViewBag.Title = "AddPlayer";
+}
+
+<h2 class="text-center">Add New Player</h2>
+
+@using (Html.BeginForm("AddPlayer", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <table class="table">
+        <tr>
+            <td><p>@Html.LabelFor(model=>model.PlayerName,"Name:")</p></td>
+            <td><p>@Html.TextBoxFor(model=>model.PlayerName, new { required = "required" })</p></td>
+        </tr>
+        <tr>
+            <td><p>@Html.LabelFor(model=>model.PlayerDOB,"Date of Birth:")</p></td>
+            <td><p>@Html.TextBoxFor(model=>model.PlayerDOB, new { required = "required" })</p></td>
+        </tr>
+        <tr>
+            <td><p>@Html.LabelFor(model=>model.PlayerTeams,"Teams Played for:")</p></td>
+            <td><p>@Html.TextBoxFor(model=>model.PlayerTeams, new { required = "required" })</p></td>
+        </tr>
+        <tr>
+            <td><p>@Html.LabelFor(model=>model.PlayerBattingStyle,"Batting Style:")</p></td>
+            <td><p>@Html.TextBoxFor(model=>model.PlayerBattingStyle, new { required = "required" })</p></td>
+        </tr>
+        <tr>
+            <td><p>@Html.LabelFor(model=>model.PlayerBowlingStyle,"Bowling Style:")</p></td>
+            <td><p>@Html.TextBoxFor(model=>model.PlayerBowlingStyle, new { required = "required" })</p></td>
+        </tr>
+        <tr>
+            <td><p>@Html.LabelFor(model=>model.PlayerProfile,"Profile:")</p></td>
+            <td><p>@Html.TextAreaFor(model=>model.PlayerProfile, new { required = "required" })</p></td>
+        </tr>
+        <tr>
+            <td><p>@Html.LabelFor(model=>model.PlayerRole,"Player Role:")</p></td>
+            <td><p>@Html.TextBoxFor(model=>model.PlayerRole, new { required = "required" })</p></td>
+        </tr>
+        <tr>
+            <td><p>@Html.LabelFor(model=>model.PlayerMainTeam,"Main Team")</p></td>
+            <td><p>@Html.DropDownList("TeamNames")</p></td>
+        </tr>
+        <tr>
+            <td><p>@Html.LabelFor(model=>model.PlayerPhoto,"Player Photo:", new { required = "required" })</p></td>
+            <td><p><input type="file" name="file" id="file" /></p></td>
+        </tr>
+
+    </table>
+    <br />
+    <input type="submit" value="Add Player" style="font-weight:bold; color:#428bca" class="btn-default" />
+}
+

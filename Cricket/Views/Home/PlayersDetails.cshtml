@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Cricket.Models.tblPlayer1>
+
+@{
+    ViewBag.Title = "PlayersDetails";
+}
+
+@foreach (var item in Model)
+{
+    <h2>@item.PlayerName Details</h2>
+}
+
+@foreach (var item in Model)
+{
+<table>
+    <tr><td><img src="@Url.Content(@item.PlayerPhoto)" /></td></tr>
+</table>
+<table class="table">
+    <tr><td><b class="tab-content">ID:</b></td>             <td>@item.PlayerID</td></tr>
+    <tr><td><b class="tab-content">Name:</b></td>           <td>@item.PlayerName</td></tr>
+    <tr><td><b class="tab-content">Date of Birth:</b></td>  <td>@item.PlayerDOB</td></tr>
+    <tr><td><b class="tab-content">Plays for:</b></td>      <td>@item.PlayerMainTeam</td></tr>
+    <tr><td><b class="tab-content">Other Teams:</b></td>    <td>@item.PlayerTeams</td></tr>
+    <tr><td><b class="tab-content">Main Role:</b></td>      <td>@item.PlayerRole</td></tr>
+    <tr><td><b class="tab-content">Batting Style:</b></td>  <td>@item.PlayerBattingStyle</td></tr>
+    <tr><td><b class="tab-content">Bowling Style:</b></td>  <td>@item.PlayerBowlingStyle</td></tr>
+</table>
+    <p><b>Profile:</b><pre>@item.PlayerProfile</pre></p>
+    <button class="btn-default"> <b>@Html.ActionLink("Delete", "Delete", new { id = item.PlayerID })</b></button>
+    <button class="btn-default"> <b>@Html.ActionLink("Edit Details", "Edit", new { id = item.PlayerID })</b></button>
+    <button class="btn-default"> <b>@Html.ActionLink("Back", "Players", new { team = item.PlayerMainTeam })</b></button>
+
+}
+
+

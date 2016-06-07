@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CricketTeamsModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblPlayer1">
+    <Key>
+      <PropertyRef Name="PlayerID" />
+    </Key>
+    <Property Name="PlayerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PlayerDOB" Type="DateTime" Precision="0" />
+    <Property Name="PlayerTeams" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PlayerBattingStyle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PlayerBowlingStyle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PlayerProfile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PlayerRole" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PlayerMainTeam" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PlayerPhoto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="CricketTeamsEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblPlayer1" EntityType="Self.tblPlayer1" />
+  </EntityContainer>
+</Schema>

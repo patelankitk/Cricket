@@ -1,0 +1,44 @@
+﻿@model Cricket.Models.tblPlayer1
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit Player Details</h2>
+
+@using (Html.BeginForm("Edit", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <table class="table">
+            @Html.HiddenFor(model => model.PlayerID)
+
+
+            <tr><td><b>Player Name :</b></td>              <td>@Html.TextBoxFor(model => model.PlayerName, new { required = "required" })</td><td></td></tr>
+
+            <tr><td><b>Player DOB :</b></td>               <td>@Html.TextBoxFor(model => model.PlayerDOB, new { required = "required" })</td><td></td></tr>
+
+            <tr><td><b>Player Teams :</b></td>             <td>@Html.TextBoxFor(model => model.PlayerTeams, new { required = "required" })</td><td></td></tr>
+
+            <tr><td><b>Player Batting Style :</b></td>     <td>@Html.TextBoxFor(model => model.PlayerBattingStyle, new { required = "required" })</td><td></td></tr>
+
+            <tr><td><b>Player Bowling Style :</b></td>     <td>@Html.TextBoxFor(model => model.PlayerBowlingStyle, new { required = "required" })</td><td></td></tr>
+
+            <tr><td><b>Player Profile :</b></td>           <td colspan="2">@Html.TextAreaFor(model => model.PlayerProfile, new { required = "required" })</td></tr>
+
+            <tr><td><b>Player Role :</b></td>              <td>@Html.TextBoxFor(model => model.PlayerRole, new { required = "required" })</td><td></td></tr>
+
+            <tr><td><b>Player Main Team :</b></td>         <td>@Html.TextBoxFor(model => model.PlayerMainTeam, new { required = "required" })</td><td></td></tr>
+
+            <tr><td><b>Player Photo :</b></td>             <td>@Html.TextBoxFor(model => model.PlayerPhoto, new { required = "required" })</td>
+                                                           <td><input id="file" name="file" type="file" /></td></tr>
+        </table>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Save" style="font-weight:bold; color:#428bca" class="btn-default" />
+            <button class="btn-default"> <b>@Html.ActionLink("Back", "PlayersDetails", new { name = Model.PlayerName })</b></button>
+            </div>
+
+    }
+

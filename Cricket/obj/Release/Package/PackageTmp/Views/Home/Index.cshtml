@@ -1,0 +1,147 @@
+﻿@model IEnumerable<Cricket.Models.tblTeam1>
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<head>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="~/stylesheet" href="css/templatemo_misc.css">
+    <link href="~/css/templatemo_style.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,600' rel='stylesheet' type='text/css'>
+
+    <script src="~/js/jquery-1.10.2.min.js"></script>
+    <script src="~/js/jquery.lightbox.js"></script>
+    <script src="~/js/templatemo_custom.js"></script>
+</head>
+
+<body>
+@{    var count = 1;
+
+    foreach (var item in Model)
+    {
+
+        if (count == 1 || count == 2)
+        {
+            <div class="hex col-sm-6">
+                <div>
+                    <div class="hexagon hexagon2 gallery-item">
+                        <div class="hexagon-in1">
+                            <a title="@item.TeamName" href="@Url.Action("Players", new { team = item.TeamName })">
+                                <div class="hexagon-in2" style="background-image: url(@Url.Content(@item.TeamPhoto))">
+                                    <div class="overlay">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            count++;
+        }
+
+        else if (count == 3)
+        {
+            <div class="hex col-sm-6  templatemo-hex-top2">
+                <div>
+                    <div class="hexagon hexagon2 gallery-item">
+                        <div class="hexagon-in1">
+                            <a title="@item.TeamName" href="@Url.Action("Players", new { team = item.TeamName })">
+                                <div class="hexagon-in2" style="background-image: url(@Url.Content(@item.TeamPhoto))" ;">
+                                    <div class="overlay">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            count++;
+        }
+
+        else if (count == 4 || count == 5)
+        {
+            <div class="hex col-sm-6  templatemo-hex-top3">
+                <div>
+                    <div class="hexagon hexagon2 gallery-item">
+                        <div class="hexagon-in1">
+                            <a title="@item.TeamName" href="@Url.Action("Players", new { team = item.TeamName })">
+                                <div class="hexagon-in2" style="background-image: url(@Url.Content(@item.TeamPhoto))" ;">
+                                    <div class="overlay">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            count++;
+        }
+
+        else if (count == 6)
+        {
+            <div class="hex col-sm-6 hex-offset templatemo-hex-top1 templatemo-hex-top2">
+                <div>
+                    <div class="hexagon hexagon2 gallery-item">
+                        <div class="hexagon-in1">
+                            <a title="@item.TeamName" href="@Url.Action("Players", new { team = item.TeamName })">
+                                <div class="hexagon-in2" style="background-image: url(@Url.Content(@item.TeamPhoto))" ;">
+                                    <div class="overlay">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            count++;
+        }
+
+
+
+        else if (count == 7 || count == 8)
+        {
+                <div class="hex col-sm-6 templatemo-hex-top1 templatemo-hex-top3">
+                    <div>
+                        <div class="hexagon hexagon2 gallery-item">
+                            <div class="hexagon-in1">
+                                <a title="@item.TeamName" href="@Url.Action("Players", new { team = item.TeamName })">
+                                    <div class="hexagon-in2" style="background-image: url(@Url.Content(@item.TeamPhoto))" ;">
+                                        <div class="overlay">
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        }
+
+        else if (count == 9)
+        {
+            <div class="hex col-sm-6 templatemo-hex-top1  templatemo-hex-top2">
+                <div>
+                    <div class="hexagon hexagon2 gallery-item">
+                        <div class="hexagon-in1">
+                            <a title="@item.TeamName" href="@Url.Action("Players", new { team = item.TeamName })">
+                                <div class="hexagon-in2" style="background-image: url(@Url.Content(@item.TeamPhoto))" ;">
+                                    <div class="overlay">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+}
+</body>
+</html>
+

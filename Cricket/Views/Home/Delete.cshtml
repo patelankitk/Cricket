@@ -1,0 +1,35 @@
+﻿    @model Cricket.Models.tblPlayer1
+
+    @{
+        ViewBag.Title = "Delete";
+    }
+
+    <h3 class="text-center">Are you sure you want to delete  @Model.PlayerName details?</h3>
+
+
+    <table>
+        <tr><td><img src="@Url.Content(Model.PlayerPhoto)" /></td></tr>
+    </table>
+    <table class="table">
+        <tr><td><b class="tab-content">ID:</b></td>             <td>@Model.PlayerID</td></tr>
+        <tr><td><b class="tab-content">Name:</b></td>           <td>@Model.PlayerName</td></tr>
+        <tr><td><b class="tab-content">Date of Birth:</b></td>  <td>@Model.PlayerDOB</td></tr>
+        <tr><td><b class="tab-content">Plays for:</b></td>      <td>@Model.PlayerMainTeam</td></tr>
+        <tr><td><b class="tab-content">Other Teams:</b></td>    <td>@Model.PlayerTeams</td></tr>
+        <tr><td><b class="tab-content">Main Role:</b></td>      <td>@Model.PlayerRole</td></tr>
+        <tr><td><b class="tab-content">Batting Style:</b></td>  <td>@Model.PlayerBattingStyle</td></tr>
+        <tr><td><b class="tab-content">Bowling Style:</b></td>  <td>@Model.PlayerBowlingStyle</td></tr>
+    </table>
+    <p><b>Profile:</b><pre>@Model.PlayerProfile</pre></p>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+        <input type="submit" value="Delete" style="font-weight:bold; color:#428bca" class="btn-default" />
+        <button class="btn-default"> <b>@Html.ActionLink("Back", "PlayersDetails", new { name = Model.PlayerName })</b></button>
+        <br />
+
+}
+ 
+
